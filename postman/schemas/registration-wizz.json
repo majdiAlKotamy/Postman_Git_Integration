@@ -1,0 +1,486 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "IBS Wizz registration API",
+    "description" : "IBS Wizz registration API",
+    "termsOfService" : "https://wizzfinancial.com/",
+    "contact" : {
+      "name" : "API Support",
+      "url" : "https://wizzfinancial.com/",
+      "email" : "majdi@wizzpay.tech"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version" : "0.1.0"
+  },
+  "servers" : [ {
+    "url" : "https://ibs-test.wizzpay.tech"
+  } ],
+  "paths" : {
+    "/api/v1/registration" : {
+      "get" : {
+        "operationId" : "get-v1-registration",
+        "summary" : "Get actual registration process state",
+        "parameters" : [ {
+          "name" : "X-IBS-Client-Id",
+          "in" : "header",
+          "description" : "Device identifier",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "actual registration state",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RegistrationModel"
+                }
+              }
+            }
+          },
+          "499" : {
+            "description" : "Not applicable for current state",
+            "content" : { }
+          }
+        }
+      },
+      "put" : {
+        "operationId" : "put-v1-registration",
+        "summary" : "Make registration process transition",
+        "parameters" : [ {
+          "name" : "X-IBS-Client-Id",
+          "in" : "header",
+          "description" : "Device identifier",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Delta data used for requested transition. See documentation",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegistrationModel"
+              }
+            }
+          },
+          "required" : false
+        },
+        "responses" : {
+          "200" : {
+            "description" : "actual registration state",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RegistrationModel"
+                }
+              }
+            }
+          },
+          "499" : {
+            "description" : "Transition failure",
+            "content" : { }
+          }
+        }
+      },
+      "post" : {
+        "operationId" : "post-v1-registration",
+        "summary" : "Make registration process transition",
+        "parameters" : [ {
+          "name" : "X-IBS-Client-Id",
+          "in" : "header",
+          "description" : "Device identifier",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "action",
+          "in" : "query",
+          "description" : "Requested registration action code",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Delta data used for requested transition. See documentation",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegistrationModel"
+              }
+            }
+          },
+          "required" : false
+        },
+        "responses" : {
+          "200" : {
+            "description" : "actual registration state",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RegistrationModel"
+                }
+              }
+            }
+          },
+          "499" : {
+            "description" : "Transition failure",
+            "content" : { }
+          }
+        },
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/registration/file/{field}" : {
+      "get" : {
+        "operationId": "get-v1-registration-file",
+        "summary" : "Download file from actual registration order",
+        "parameters" : [ {
+          "name" : "X-IBS-Client-Id",
+          "in" : "header",
+          "description" : "Device identifier",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "field",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "description" : "Downloadable field name",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "enum" : ["PHOTO", "AUDIT_TRAIL_IMAGE", "FACE_IMAGE", "FRONT_IMAGE"]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation. File binary data will be returned",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              }
+            }
+          },
+          "499" : {
+            "description" : "Requested file is not available",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/api/v1/registration/verification-token" : {
+      "post" : {
+        "operationId" : "post-v1-registration-verification-token",
+        "summary" : "Renew and get verification token",
+        "parameters" : [ {
+          "name" : "X-IBS-Client-Id",
+          "in" : "header",
+          "description" : "Device identifier",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "actual registration state",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RegistrationModel"
+                }
+              }
+            }
+          },
+          "499" : {
+            "description" : "Not applicable for current state",
+            "content" : { }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "RegistrationModel" : {
+        "type" : "object",
+        "properties" : {
+          "meta" : {
+            "$ref" : "../../ibs-core/rest-api/common.json#/components/schemas/MetaModel"
+          },
+          "state" : {
+            "$ref" : "#/components/schemas/RegistrationState"
+          },
+          "actions" : {
+            "type" : "array",
+            "description" : "Array of available actions for actual state",
+            "items" : {
+              "$ref" : "#/components/schemas/RegistrationAction"
+            }
+          },
+          "phone" : {
+            "type" : "string",
+            "description" : "Customer phone number"
+          },
+          "email" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Customer email"
+          },
+          "codeword" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Customer code word"
+          },
+          "pushToken" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "token for push messages"
+          },
+          "emailOTP" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "OTP from email - used in state CONFIRM_EMAIL only"
+          },
+          "bankMessage" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Message from bank"
+          },
+          "personInfo" : {
+            "$ref" : "#/components/schemas/PersonDocumentModel"
+          },
+          "country": {
+            "description": "Country",
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "Country ID",
+                "type": "integer",
+                "format": "int64",
+                "nullable": true
+              },
+              "code" : {
+                "type" : "string",
+                "description" : "Country 3-letter code"
+              }
+            },
+            "nullable": true
+          },
+          "password" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "User password"
+          },
+          "token" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Session token, appeared when registration process ends"
+          },
+          "refreshToken" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Session refresh token, appeared when registration process ends"
+          },
+          "verificationToken" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Token for document verification"
+          },
+          "verificationTokenExpired" : {
+            "type" : "string",
+            "format" : "date-time",
+            "nullable": true,
+            "description" : "Token for document verification expire time"
+          },
+          "verificationData" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Document verification data (only from frontend)"
+          }
+        },
+        "description" : "Registration root model. This model contains all registration data"
+      },
+      "RegistrationState" : {
+        "type" : "string",
+        "description" : "Registration state",
+        "enum" : [ "STARTED", "COUNTRY", "DOCUMENT", "DOCUMENT_VERIFICATION_STARTED", "DOCUMENT_VERIFICATION", "DOCUMENT_VERIFIED", "EMAIL_ENTER", "EMAIL_CONFIRMATION", "USER_REGISTERED", "ENTER_PASSWORD", "CANCELLED", "REJECTED", "END" ]
+      },
+      "RegistrationAction" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string",
+            "description" : "Action code",
+            "enum": [ "FILL_COUNTRY", "FILL_DOCUMENT_TYPE", "DOCUMENT_VERIFICATION", "TO_EMAIL_ENTER", "TO_EMAIL_CONFIRMATION", "CONFIRM_EMAIL", "TO_ENTER_PASSWORD", "END", "CANCEL", "PREV" ]
+          },
+          "name" : {
+            "type" : "string",
+            "description" : "Localized action name"
+          },
+          "position" : {
+            "type" : "integer",
+            "description" : "Action position"
+          }
+        },
+        "description" : "Registration action"
+      },
+      "PersonDocumentModel" : {
+        "type" : "object",
+        "properties" : {
+          "documentType" : {
+            "type" : "string",
+            "description" : "Type of customer document",
+            "enum": ["PASSPORT", "IDCARD"],
+            "nullable": true
+          },
+          "lastName" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Person last name"
+          },
+          "firstName" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Person first name"
+          },
+          "identity" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Person identity"
+          },
+          "gender" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Person gender",
+            "enum" : [ "MALE", "FEMALE" ]
+          },
+          "birthDate" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Person birth date",
+            "format" : "yyyy-MM-dd"
+          },
+          "documentExpireDate" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Document expire  date",
+            "format" : "yyyy-MM-dd"
+          },
+          "documentNumber" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Document number"
+          },
+          "documentCode" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Document code"
+          },
+          "documentIssuer" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Document issuer"
+          },
+          "nationality" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Nationality"
+          },
+          "files": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref" : "./../../ibs-core/rest-api/common.json#/components/schemas/FileDataModel"
+            },
+            "nullable": true
+          },
+          "address" : {
+            "$ref" : "#/components/schemas/AddressModel"
+          }
+        },
+        "description" : "Object which person info"
+      },
+      "AddressModel" : {
+        "type" : "object",
+        "properties" : {
+          "country" : {
+            "anyOf": [
+              { "type": "null" },
+              { "$ref" : "./../../ibs-core/rest-api/common.json#/components/schemas/Country" }
+            ]
+          },
+          "postCode" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Person address: post code"
+          },
+          "region" : {
+            "anyOf": [
+              { "type": "null" },
+              { "$ref" : "./../../ibs-core/rest-api/common.json#/components/schemas/District" }
+            ]
+          },
+          "district" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Person address: district"
+          },
+          "city" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Person address: city"
+          },
+          "street" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Person address: street"
+          },
+          "building" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Person address: building"
+          },
+          "flat" : {
+            "type" : "string",
+            "nullable": true,
+            "description" : "Person address: flat"
+          }
+        },
+        "description" : "Person address"
+      }
+    },
+    "securitySchemes" : {
+      "Bearer" : {
+        "type" : "apiKey",
+        "name" : "Authorization",
+        "in" : "header"
+      }
+    }
+  }
+}

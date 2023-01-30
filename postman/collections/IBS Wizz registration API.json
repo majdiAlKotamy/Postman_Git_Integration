@@ -1,0 +1,724 @@
+{
+	"info": {
+		"_postman_id": "c75f487d-ffa6-44e6-8131-2e9936aa54bd",
+		"name": "IBS Wizz registration API",
+		"description": "IBS Wizz registration API\n\nContact Support:\n Name: API Support\n Email: support@finik.pro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "22683739-c75f487d-ffa6-44e6-8131-2e9936aa54bd"
+	},
+	"item": [
+		{
+			"name": "api/v1/registration",
+			"item": [
+				{
+					"name": "Get actual registration process state",
+					"id": "52813b13-b0fd-4694-9b95-4eb4a5511817",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) Device identifier",
+								"key": "X-IBS-Client-Id",
+								"value": "ex d"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/registration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"registration"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "213c5fb6-5153-4e44-9236-7dd1225954ab",
+							"name": "actual registration state",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Device identifier",
+										"key": "X-IBS-Client-Id",
+										"value": "ex d"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"meta\": {\n    \"value\": \"reference #/components/schemas/MetaModel not found in the OpenAPI spec\"\n  },\n  \"state\": \"STARTED\",\n  \"actions\": [\n    {\n      \"code\": \"FILL_DOCUMENT_TYPE\",\n      \"name\": \"irure Duis\",\n      \"position\": 16326746\n    },\n    {\n      \"code\": \"FILL_COUNTRY\",\n      \"name\": \"dolore ut ullamco\",\n      \"position\": -32537992\n    }\n  ],\n  \"phone\": \"aliquip eiusmod\",\n  \"email\": \"pariatur aliqua ut\",\n  \"codeword\": \"anim laborum consequat Lorem commodo\",\n  \"pushToken\": \"ullamco ipsum tempor quis\",\n  \"emailOTP\": \"enim Duis ullamco\",\n  \"bankMessage\": \"cupidatat anim ut sed\",\n  \"personInfo\": {\n    \"documentType\": \"IDCARD\",\n    \"lastName\": \"ex veniam\",\n    \"firstName\": \"nulla consequat ullamco\",\n    \"identity\": \"occaecat elit\",\n    \"gender\": \"MALE\",\n    \"birthDate\": \"lab\",\n    \"documentExpireDate\": \"adipisicing dolor qui\",\n    \"documentNumber\": \"nulla laborum culpa\",\n    \"documentCode\": \"velit in eu\",\n    \"documentIssuer\": \"sit laborum\",\n    \"nationality\": \"Ut aute Excepteur dolor deserunt\",\n    \"files\": {\n      \"dolor0e0\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"mollitfb\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"pariatur_3e9\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      }\n    },\n    \"address\": {\n      \"country\": null,\n      \"postCode\": \"in aute pariatur Excepteur\",\n      \"region\": null,\n      \"district\": \"in culpa\",\n      \"city\": \"sint incididunt velit qui\",\n      \"street\": \"magna deserunt non in nulla\",\n      \"building\": \"ipsum proident est\",\n      \"flat\": \"aliquip consectetur Ut\"\n    }\n  },\n  \"country\": {\n    \"id\": 17679579,\n    \"code\": \"tempor Duis sunt id\"\n  },\n  \"password\": \"commodo nostrud ullamco\",\n  \"token\": \"aliqua enim labore ullamco\",\n  \"refreshToken\": \"aute\",\n  \"verificationToken\": \"consequat\",\n  \"verificationTokenExpired\": \"2017-04-21T15:50:23.046Z\",\n  \"verificationData\": \"occaecat deserunt enim quis\"\n}"
+						},
+						{
+							"id": "7f7cb894-7fbe-470e-bf32-722147005cf9",
+							"name": "Not applicable for current state",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Device identifier",
+										"key": "X-IBS-Client-Id",
+										"value": "ex d"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registration"
+									]
+								}
+							},
+							"status": "Client Closed Request",
+							"code": 499,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Make registration process transition",
+					"id": "d6ae3129-f1b0-44db-92d1-c4a2056d022c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "(Required) Device identifier",
+								"key": "X-IBS-Client-Id",
+								"value": "ex d"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"meta\": {\n    \"value\": \"reference #/components/schemas/MetaModel not found in the OpenAPI spec\"\n  },\n  \"state\": \"EMAIL_CONFIRMATION\",\n  \"actions\": [\n    {\n      \"code\": \"FILL_DOCUMENT_TYPE\",\n      \"name\": \"Duis nostrud irure\",\n      \"position\": 343146\n    },\n    {\n      \"code\": \"END\",\n      \"name\": \"ut consectetur quis Ut\",\n      \"position\": 30070101\n    }\n  ],\n  \"phone\": \"adipisicing Excepteur\",\n  \"email\": \"Ut in cillum\",\n  \"codeword\": \"exercitation aliqua ipsum\",\n  \"pushToken\": \"laborum elit\",\n  \"emailOTP\": \"ea ullamco laboris\",\n  \"bankMessage\": \"ut aliquip labore\",\n  \"personInfo\": {\n    \"documentType\": \"IDCARD\",\n    \"lastName\": \"id dolor in aliqua\",\n    \"firstName\": \"eiusmod anim in sunt\",\n    \"identity\": \"laborum\",\n    \"gender\": \"FEMALE\",\n    \"birthDate\": \"sint laboris commodo adipisicing\",\n    \"documentExpireDate\": \"aliquip officia Lorem ullamco\",\n    \"documentNumber\": \"ipsum cupidatat laboris adipisicin\",\n    \"documentCode\": \"amet irure\",\n    \"documentIssuer\": \"Ut dolore minim\",\n    \"nationality\": \"tempor\",\n    \"files\": {\n      \"sed_608\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"elit_1d3\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"aute_d\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"laborise85\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      }\n    },\n    \"address\": {\n      \"country\": null,\n      \"postCode\": \"laborum\",\n      \"region\": null,\n      \"district\": \"veniam occaecat commodo Excepteur\",\n      \"city\": \"nulla cupidatat\",\n      \"street\": \"eiu\",\n      \"building\": \"pariatur sit\",\n      \"flat\": \"voluptate ad aute pariatur\"\n    }\n  },\n  \"country\": {\n    \"id\": -855236,\n    \"code\": \"elit exercitation nulla sit\"\n  },\n  \"password\": \"labore dolor ipsum reprehenderit ex\",\n  \"token\": \"sed laboris eu\",\n  \"refreshToken\": \"adipisicing ullamco ipsum\",\n  \"verificationToken\": \"quis ad incididunt\",\n  \"verificationTokenExpired\": \"2016-10-30T04:59:20.986Z\",\n  \"verificationData\": \"ut sit eu\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/registration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"registration"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "bbdc41cc-8057-434d-ad1f-68dba9714956",
+							"name": "actual registration state",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) Device identifier",
+										"key": "X-IBS-Client-Id",
+										"value": "ex d"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"meta\": {\n    \"value\": \"reference #/components/schemas/MetaModel not found in the OpenAPI spec\"\n  },\n  \"state\": \"EMAIL_CONFIRMATION\",\n  \"actions\": [\n    {\n      \"code\": \"FILL_DOCUMENT_TYPE\",\n      \"name\": \"Duis nostrud irure\",\n      \"position\": 343146\n    },\n    {\n      \"code\": \"END\",\n      \"name\": \"ut consectetur quis Ut\",\n      \"position\": 30070101\n    }\n  ],\n  \"phone\": \"adipisicing Excepteur\",\n  \"email\": \"Ut in cillum\",\n  \"codeword\": \"exercitation aliqua ipsum\",\n  \"pushToken\": \"laborum elit\",\n  \"emailOTP\": \"ea ullamco laboris\",\n  \"bankMessage\": \"ut aliquip labore\",\n  \"personInfo\": {\n    \"documentType\": \"IDCARD\",\n    \"lastName\": \"id dolor in aliqua\",\n    \"firstName\": \"eiusmod anim in sunt\",\n    \"identity\": \"laborum\",\n    \"gender\": \"FEMALE\",\n    \"birthDate\": \"sint laboris commodo adipisicing\",\n    \"documentExpireDate\": \"aliquip officia Lorem ullamco\",\n    \"documentNumber\": \"ipsum cupidatat laboris adipisicin\",\n    \"documentCode\": \"amet irure\",\n    \"documentIssuer\": \"Ut dolore minim\",\n    \"nationality\": \"tempor\",\n    \"files\": {\n      \"sed_608\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"elit_1d3\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"aute_d\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"laborise85\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      }\n    },\n    \"address\": {\n      \"country\": null,\n      \"postCode\": \"laborum\",\n      \"region\": null,\n      \"district\": \"veniam occaecat commodo Excepteur\",\n      \"city\": \"nulla cupidatat\",\n      \"street\": \"eiu\",\n      \"building\": \"pariatur sit\",\n      \"flat\": \"voluptate ad aute pariatur\"\n    }\n  },\n  \"country\": {\n    \"id\": -855236,\n    \"code\": \"elit exercitation nulla sit\"\n  },\n  \"password\": \"labore dolor ipsum reprehenderit ex\",\n  \"token\": \"sed laboris eu\",\n  \"refreshToken\": \"adipisicing ullamco ipsum\",\n  \"verificationToken\": \"quis ad incididunt\",\n  \"verificationTokenExpired\": \"2016-10-30T04:59:20.986Z\",\n  \"verificationData\": \"ut sit eu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"meta\": {\n    \"value\": \"reference #/components/schemas/MetaModel not found in the OpenAPI spec\"\n  },\n  \"state\": \"EMAIL_CONFIRMATION\",\n  \"actions\": [\n    {\n      \"code\": \"FILL_DOCUMENT_TYPE\",\n      \"name\": \"Duis nostrud irure\",\n      \"position\": 343146\n    },\n    {\n      \"code\": \"END\",\n      \"name\": \"ut consectetur quis Ut\",\n      \"position\": 30070101\n    }\n  ],\n  \"phone\": \"adipisicing Excepteur\",\n  \"email\": \"Ut in cillum\",\n  \"codeword\": \"exercitation aliqua ipsum\",\n  \"pushToken\": \"laborum elit\",\n  \"emailOTP\": \"ea ullamco laboris\",\n  \"bankMessage\": \"ut aliquip labore\",\n  \"personInfo\": {\n    \"documentType\": \"IDCARD\",\n    \"lastName\": \"id dolor in aliqua\",\n    \"firstName\": \"eiusmod anim in sunt\",\n    \"identity\": \"laborum\",\n    \"gender\": \"FEMALE\",\n    \"birthDate\": \"sint laboris commodo adipisicing\",\n    \"documentExpireDate\": \"aliquip officia Lorem ullamco\",\n    \"documentNumber\": \"ipsum cupidatat laboris adipisicin\",\n    \"documentCode\": \"amet irure\",\n    \"documentIssuer\": \"Ut dolore minim\",\n    \"nationality\": \"tempor\",\n    \"files\": {\n      \"sed_608\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"elit_1d3\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"aute_d\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"laborise85\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      }\n    },\n    \"address\": {\n      \"country\": null,\n      \"postCode\": \"laborum\",\n      \"region\": null,\n      \"district\": \"veniam occaecat commodo Excepteur\",\n      \"city\": \"nulla cupidatat\",\n      \"street\": \"eiu\",\n      \"building\": \"pariatur sit\",\n      \"flat\": \"voluptate ad aute pariatur\"\n    }\n  },\n  \"country\": {\n    \"id\": -855236,\n    \"code\": \"elit exercitation nulla sit\"\n  },\n  \"password\": \"labore dolor ipsum reprehenderit ex\",\n  \"token\": \"sed laboris eu\",\n  \"refreshToken\": \"adipisicing ullamco ipsum\",\n  \"verificationToken\": \"quis ad incididunt\",\n  \"verificationTokenExpired\": \"2016-10-30T04:59:20.986Z\",\n  \"verificationData\": \"ut sit eu\"\n}"
+						},
+						{
+							"id": "1a71850d-e4ef-49f9-b167-04061aece93b",
+							"name": "Transition failure",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"description": "(Required) Device identifier",
+										"key": "X-IBS-Client-Id",
+										"value": "ex d"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"meta\": {\n    \"value\": \"reference #/components/schemas/MetaModel not found in the OpenAPI spec\"\n  },\n  \"state\": \"EMAIL_CONFIRMATION\",\n  \"actions\": [\n    {\n      \"code\": \"FILL_DOCUMENT_TYPE\",\n      \"name\": \"Duis nostrud irure\",\n      \"position\": 343146\n    },\n    {\n      \"code\": \"END\",\n      \"name\": \"ut consectetur quis Ut\",\n      \"position\": 30070101\n    }\n  ],\n  \"phone\": \"adipisicing Excepteur\",\n  \"email\": \"Ut in cillum\",\n  \"codeword\": \"exercitation aliqua ipsum\",\n  \"pushToken\": \"laborum elit\",\n  \"emailOTP\": \"ea ullamco laboris\",\n  \"bankMessage\": \"ut aliquip labore\",\n  \"personInfo\": {\n    \"documentType\": \"IDCARD\",\n    \"lastName\": \"id dolor in aliqua\",\n    \"firstName\": \"eiusmod anim in sunt\",\n    \"identity\": \"laborum\",\n    \"gender\": \"FEMALE\",\n    \"birthDate\": \"sint laboris commodo adipisicing\",\n    \"documentExpireDate\": \"aliquip officia Lorem ullamco\",\n    \"documentNumber\": \"ipsum cupidatat laboris adipisicin\",\n    \"documentCode\": \"amet irure\",\n    \"documentIssuer\": \"Ut dolore minim\",\n    \"nationality\": \"tempor\",\n    \"files\": {\n      \"sed_608\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"elit_1d3\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"aute_d\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"laborise85\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      }\n    },\n    \"address\": {\n      \"country\": null,\n      \"postCode\": \"laborum\",\n      \"region\": null,\n      \"district\": \"veniam occaecat commodo Excepteur\",\n      \"city\": \"nulla cupidatat\",\n      \"street\": \"eiu\",\n      \"building\": \"pariatur sit\",\n      \"flat\": \"voluptate ad aute pariatur\"\n    }\n  },\n  \"country\": {\n    \"id\": -855236,\n    \"code\": \"elit exercitation nulla sit\"\n  },\n  \"password\": \"labore dolor ipsum reprehenderit ex\",\n  \"token\": \"sed laboris eu\",\n  \"refreshToken\": \"adipisicing ullamco ipsum\",\n  \"verificationToken\": \"quis ad incididunt\",\n  \"verificationTokenExpired\": \"2016-10-30T04:59:20.986Z\",\n  \"verificationData\": \"ut sit eu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registration"
+									]
+								}
+							},
+							"status": "Client Closed Request",
+							"code": 499,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Make registration process transition",
+					"id": "ee404f41-6b6b-4c5b-bd23-3a416555b19a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) Device identifier",
+								"key": "X-IBS-Client-Id",
+								"value": "ex d"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"meta\": {\n    \"value\": \"reference #/components/schemas/MetaModel not found in the OpenAPI spec\"\n  },\n  \"state\": \"EMAIL_CONFIRMATION\",\n  \"actions\": [\n    {\n      \"code\": \"FILL_DOCUMENT_TYPE\",\n      \"name\": \"Duis nostrud irure\",\n      \"position\": 343146\n    },\n    {\n      \"code\": \"END\",\n      \"name\": \"ut consectetur quis Ut\",\n      \"position\": 30070101\n    }\n  ],\n  \"phone\": \"adipisicing Excepteur\",\n  \"email\": \"Ut in cillum\",\n  \"codeword\": \"exercitation aliqua ipsum\",\n  \"pushToken\": \"laborum elit\",\n  \"emailOTP\": \"ea ullamco laboris\",\n  \"bankMessage\": \"ut aliquip labore\",\n  \"personInfo\": {\n    \"documentType\": \"IDCARD\",\n    \"lastName\": \"id dolor in aliqua\",\n    \"firstName\": \"eiusmod anim in sunt\",\n    \"identity\": \"laborum\",\n    \"gender\": \"FEMALE\",\n    \"birthDate\": \"sint laboris commodo adipisicing\",\n    \"documentExpireDate\": \"aliquip officia Lorem ullamco\",\n    \"documentNumber\": \"ipsum cupidatat laboris adipisicin\",\n    \"documentCode\": \"amet irure\",\n    \"documentIssuer\": \"Ut dolore minim\",\n    \"nationality\": \"tempor\",\n    \"files\": {\n      \"sed_608\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"elit_1d3\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"aute_d\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"laborise85\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      }\n    },\n    \"address\": {\n      \"country\": null,\n      \"postCode\": \"laborum\",\n      \"region\": null,\n      \"district\": \"veniam occaecat commodo Excepteur\",\n      \"city\": \"nulla cupidatat\",\n      \"street\": \"eiu\",\n      \"building\": \"pariatur sit\",\n      \"flat\": \"voluptate ad aute pariatur\"\n    }\n  },\n  \"country\": {\n    \"id\": -855236,\n    \"code\": \"elit exercitation nulla sit\"\n  },\n  \"password\": \"labore dolor ipsum reprehenderit ex\",\n  \"token\": \"sed laboris eu\",\n  \"refreshToken\": \"adipisicing ullamco ipsum\",\n  \"verificationToken\": \"quis ad incididunt\",\n  \"verificationTokenExpired\": \"2016-10-30T04:59:20.986Z\",\n  \"verificationData\": \"ut sit eu\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/registration?action=ex d",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"registration"
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "ex d",
+									"description": "(Required) Requested registration action code"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "970d26f6-91ce-4baf-aa9d-69c5f8fb921f",
+							"name": "actual registration state",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Device identifier",
+										"key": "X-IBS-Client-Id",
+										"value": "ex d"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"meta\": {\n    \"value\": \"reference #/components/schemas/MetaModel not found in the OpenAPI spec\"\n  },\n  \"state\": \"EMAIL_CONFIRMATION\",\n  \"actions\": [\n    {\n      \"code\": \"FILL_DOCUMENT_TYPE\",\n      \"name\": \"Duis nostrud irure\",\n      \"position\": 343146\n    },\n    {\n      \"code\": \"END\",\n      \"name\": \"ut consectetur quis Ut\",\n      \"position\": 30070101\n    }\n  ],\n  \"phone\": \"adipisicing Excepteur\",\n  \"email\": \"Ut in cillum\",\n  \"codeword\": \"exercitation aliqua ipsum\",\n  \"pushToken\": \"laborum elit\",\n  \"emailOTP\": \"ea ullamco laboris\",\n  \"bankMessage\": \"ut aliquip labore\",\n  \"personInfo\": {\n    \"documentType\": \"IDCARD\",\n    \"lastName\": \"id dolor in aliqua\",\n    \"firstName\": \"eiusmod anim in sunt\",\n    \"identity\": \"laborum\",\n    \"gender\": \"FEMALE\",\n    \"birthDate\": \"sint laboris commodo adipisicing\",\n    \"documentExpireDate\": \"aliquip officia Lorem ullamco\",\n    \"documentNumber\": \"ipsum cupidatat laboris adipisicin\",\n    \"documentCode\": \"amet irure\",\n    \"documentIssuer\": \"Ut dolore minim\",\n    \"nationality\": \"tempor\",\n    \"files\": {\n      \"sed_608\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"elit_1d3\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"aute_d\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"laborise85\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      }\n    },\n    \"address\": {\n      \"country\": null,\n      \"postCode\": \"laborum\",\n      \"region\": null,\n      \"district\": \"veniam occaecat commodo Excepteur\",\n      \"city\": \"nulla cupidatat\",\n      \"street\": \"eiu\",\n      \"building\": \"pariatur sit\",\n      \"flat\": \"voluptate ad aute pariatur\"\n    }\n  },\n  \"country\": {\n    \"id\": -855236,\n    \"code\": \"elit exercitation nulla sit\"\n  },\n  \"password\": \"labore dolor ipsum reprehenderit ex\",\n  \"token\": \"sed laboris eu\",\n  \"refreshToken\": \"adipisicing ullamco ipsum\",\n  \"verificationToken\": \"quis ad incididunt\",\n  \"verificationTokenExpired\": \"2016-10-30T04:59:20.986Z\",\n  \"verificationData\": \"ut sit eu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/registration?action=ex d",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registration"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "ex d",
+											"description": "(Required) Requested registration action code"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"meta\": {\n    \"value\": \"reference #/components/schemas/MetaModel not found in the OpenAPI spec\"\n  },\n  \"state\": \"EMAIL_CONFIRMATION\",\n  \"actions\": [\n    {\n      \"code\": \"FILL_DOCUMENT_TYPE\",\n      \"name\": \"Duis nostrud irure\",\n      \"position\": 343146\n    },\n    {\n      \"code\": \"END\",\n      \"name\": \"ut consectetur quis Ut\",\n      \"position\": 30070101\n    }\n  ],\n  \"phone\": \"adipisicing Excepteur\",\n  \"email\": \"Ut in cillum\",\n  \"codeword\": \"exercitation aliqua ipsum\",\n  \"pushToken\": \"laborum elit\",\n  \"emailOTP\": \"ea ullamco laboris\",\n  \"bankMessage\": \"ut aliquip labore\",\n  \"personInfo\": {\n    \"documentType\": \"IDCARD\",\n    \"lastName\": \"id dolor in aliqua\",\n    \"firstName\": \"eiusmod anim in sunt\",\n    \"identity\": \"laborum\",\n    \"gender\": \"FEMALE\",\n    \"birthDate\": \"sint laboris commodo adipisicing\",\n    \"documentExpireDate\": \"aliquip officia Lorem ullamco\",\n    \"documentNumber\": \"ipsum cupidatat laboris adipisicin\",\n    \"documentCode\": \"amet irure\",\n    \"documentIssuer\": \"Ut dolore minim\",\n    \"nationality\": \"tempor\",\n    \"files\": {\n      \"sed_608\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"elit_1d3\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"aute_d\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"laborise85\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      }\n    },\n    \"address\": {\n      \"country\": null,\n      \"postCode\": \"laborum\",\n      \"region\": null,\n      \"district\": \"veniam occaecat commodo Excepteur\",\n      \"city\": \"nulla cupidatat\",\n      \"street\": \"eiu\",\n      \"building\": \"pariatur sit\",\n      \"flat\": \"voluptate ad aute pariatur\"\n    }\n  },\n  \"country\": {\n    \"id\": -855236,\n    \"code\": \"elit exercitation nulla sit\"\n  },\n  \"password\": \"labore dolor ipsum reprehenderit ex\",\n  \"token\": \"sed laboris eu\",\n  \"refreshToken\": \"adipisicing ullamco ipsum\",\n  \"verificationToken\": \"quis ad incididunt\",\n  \"verificationTokenExpired\": \"2016-10-30T04:59:20.986Z\",\n  \"verificationData\": \"ut sit eu\"\n}"
+						},
+						{
+							"id": "c1c9a9fb-5777-417c-bbac-1c3b791b0caa",
+							"name": "Transition failure",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Device identifier",
+										"key": "X-IBS-Client-Id",
+										"value": "ex d"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"meta\": {\n    \"value\": \"reference #/components/schemas/MetaModel not found in the OpenAPI spec\"\n  },\n  \"state\": \"EMAIL_CONFIRMATION\",\n  \"actions\": [\n    {\n      \"code\": \"FILL_DOCUMENT_TYPE\",\n      \"name\": \"Duis nostrud irure\",\n      \"position\": 343146\n    },\n    {\n      \"code\": \"END\",\n      \"name\": \"ut consectetur quis Ut\",\n      \"position\": 30070101\n    }\n  ],\n  \"phone\": \"adipisicing Excepteur\",\n  \"email\": \"Ut in cillum\",\n  \"codeword\": \"exercitation aliqua ipsum\",\n  \"pushToken\": \"laborum elit\",\n  \"emailOTP\": \"ea ullamco laboris\",\n  \"bankMessage\": \"ut aliquip labore\",\n  \"personInfo\": {\n    \"documentType\": \"IDCARD\",\n    \"lastName\": \"id dolor in aliqua\",\n    \"firstName\": \"eiusmod anim in sunt\",\n    \"identity\": \"laborum\",\n    \"gender\": \"FEMALE\",\n    \"birthDate\": \"sint laboris commodo adipisicing\",\n    \"documentExpireDate\": \"aliquip officia Lorem ullamco\",\n    \"documentNumber\": \"ipsum cupidatat laboris adipisicin\",\n    \"documentCode\": \"amet irure\",\n    \"documentIssuer\": \"Ut dolore minim\",\n    \"nationality\": \"tempor\",\n    \"files\": {\n      \"sed_608\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"elit_1d3\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"aute_d\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"laborise85\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      }\n    },\n    \"address\": {\n      \"country\": null,\n      \"postCode\": \"laborum\",\n      \"region\": null,\n      \"district\": \"veniam occaecat commodo Excepteur\",\n      \"city\": \"nulla cupidatat\",\n      \"street\": \"eiu\",\n      \"building\": \"pariatur sit\",\n      \"flat\": \"voluptate ad aute pariatur\"\n    }\n  },\n  \"country\": {\n    \"id\": -855236,\n    \"code\": \"elit exercitation nulla sit\"\n  },\n  \"password\": \"labore dolor ipsum reprehenderit ex\",\n  \"token\": \"sed laboris eu\",\n  \"refreshToken\": \"adipisicing ullamco ipsum\",\n  \"verificationToken\": \"quis ad incididunt\",\n  \"verificationTokenExpired\": \"2016-10-30T04:59:20.986Z\",\n  \"verificationData\": \"ut sit eu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/registration?action=ex d",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registration"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "ex d",
+											"description": "(Required) Requested registration action code"
+										}
+									]
+								}
+							},
+							"status": "Client Closed Request",
+							"code": 499,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Download file from actual registration order",
+					"id": "b3e58651-10bb-42a9-ac68-7adbeb150fd2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "(Required) Device identifier",
+								"key": "X-IBS-Client-Id",
+								"value": "ex d"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/registration/file/:field",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"registration",
+								"file",
+								":field"
+							],
+							"variable": [
+								{
+									"key": "field",
+									"value": "FACE_IMAGE",
+									"description": "(Required) Downloadable field name"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "eed39492-91d8-482f-b7e4-9518916179fe",
+							"name": "Successful operation. File binary data will be returned",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Device identifier",
+										"key": "X-IBS-Client-Id",
+										"value": "ex d"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/registration/file/:field",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registration",
+										"file",
+										":field"
+									],
+									"variable": [
+										{
+											"key": "field",
+											"value": "FACE_IMAGE",
+											"description": "(Required) Downloadable field name"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "\"ex d\""
+						},
+						{
+							"id": "8516aefb-17f5-4b69-942f-fe9f5eeba489",
+							"name": "Requested file is not available",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "(Required) Device identifier",
+										"key": "X-IBS-Client-Id",
+										"value": "ex d"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/registration/file/:field",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registration",
+										"file",
+										":field"
+									],
+									"variable": [
+										{
+											"key": "field",
+											"value": "FACE_IMAGE",
+											"description": "(Required) Downloadable field name"
+										}
+									]
+								}
+							},
+							"status": "Client Closed Request",
+							"code": 499,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Renew and get verification token",
+					"id": "19dddca1-1529-40fa-a33f-f93e7eef7ea4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "(Required) Device identifier",
+								"key": "X-IBS-Client-Id",
+								"value": "ex d"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/registration/verification-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"registration",
+								"verification-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "3a04c078-147d-4710-a342-7a97e7adaa8a",
+							"name": "actual registration state",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Device identifier",
+										"key": "X-IBS-Client-Id",
+										"value": "ex d"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/registration/verification-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registration",
+										"verification-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"meta\": {\n    \"value\": \"reference #/components/schemas/MetaModel not found in the OpenAPI spec\"\n  },\n  \"state\": \"EMAIL_CONFIRMATION\",\n  \"actions\": [\n    {\n      \"code\": \"FILL_DOCUMENT_TYPE\",\n      \"name\": \"Duis nostrud irure\",\n      \"position\": 343146\n    },\n    {\n      \"code\": \"END\",\n      \"name\": \"ut consectetur quis Ut\",\n      \"position\": 30070101\n    }\n  ],\n  \"phone\": \"adipisicing Excepteur\",\n  \"email\": \"Ut in cillum\",\n  \"codeword\": \"exercitation aliqua ipsum\",\n  \"pushToken\": \"laborum elit\",\n  \"emailOTP\": \"ea ullamco laboris\",\n  \"bankMessage\": \"ut aliquip labore\",\n  \"personInfo\": {\n    \"documentType\": \"IDCARD\",\n    \"lastName\": \"id dolor in aliqua\",\n    \"firstName\": \"eiusmod anim in sunt\",\n    \"identity\": \"laborum\",\n    \"gender\": \"FEMALE\",\n    \"birthDate\": \"sint laboris commodo adipisicing\",\n    \"documentExpireDate\": \"aliquip officia Lorem ullamco\",\n    \"documentNumber\": \"ipsum cupidatat laboris adipisicin\",\n    \"documentCode\": \"amet irure\",\n    \"documentIssuer\": \"Ut dolore minim\",\n    \"nationality\": \"tempor\",\n    \"files\": {\n      \"sed_608\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"elit_1d3\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"aute_d\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      },\n      \"laborise85\": {\n        \"value\": \"reference #/components/schemas/FileDataModel not found in the OpenAPI spec\"\n      }\n    },\n    \"address\": {\n      \"country\": null,\n      \"postCode\": \"laborum\",\n      \"region\": null,\n      \"district\": \"veniam occaecat commodo Excepteur\",\n      \"city\": \"nulla cupidatat\",\n      \"street\": \"eiu\",\n      \"building\": \"pariatur sit\",\n      \"flat\": \"voluptate ad aute pariatur\"\n    }\n  },\n  \"country\": {\n    \"id\": -855236,\n    \"code\": \"elit exercitation nulla sit\"\n  },\n  \"password\": \"labore dolor ipsum reprehenderit ex\",\n  \"token\": \"sed laboris eu\",\n  \"refreshToken\": \"adipisicing ullamco ipsum\",\n  \"verificationToken\": \"quis ad incididunt\",\n  \"verificationTokenExpired\": \"2016-10-30T04:59:20.986Z\",\n  \"verificationData\": \"ut sit eu\"\n}"
+						},
+						{
+							"id": "61db59fc-a559-4fa4-9d50-77d61b7d6245",
+							"name": "Not applicable for current state",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "(Required) Device identifier",
+										"key": "X-IBS-Client-Id",
+										"value": "ex d"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/registration/verification-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"registration",
+										"verification-token"
+									]
+								}
+							},
+							"status": "Client Closed Request",
+							"code": 499,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			],
+			"id": "5818f1a5-b339-480e-a4d7-686ebfbda82d"
+		}
+	],
+	"variable": [
+		{
+			"id": "765bdd97-1cab-4f87-8da3-0e661067b08d",
+			"key": "baseUrl",
+			"value": "https://finik.pro",
+			"type": "string"
+		}
+	]
+}
